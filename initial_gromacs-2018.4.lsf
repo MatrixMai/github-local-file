@@ -8,5 +8,5 @@ source /home_gkx/compiler/intel/oneapi/setvars.sh intel64
 source /home_gkx/Soft/Gromacs/2018.4_oneapi/bin/GMXRC.bash
 export OMP_NUM_THREADS=1
 
-#gmx_mpi grompp -f em.mdp -c fws_ion.pdb -p fws.top -o fws_em.tpr
+gmx_mpi grompp -f em.mdp -c fws_ion.pdb -p fws.top -o fws_em.tpr
 mpirun -np $NP gmx_mpi mdrun -v -s fws_em.tpr -o fws_em.trr -c fws_b4pr.pdb -e em.edr -g em.log
